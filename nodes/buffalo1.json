@@ -103,20 +103,20 @@
   },
   "centos": {
     "hosts": {
-      "names": ["::1         localhost localhost.localdomain localhost6 localhost6.localdomain6",
+      "names": ["::1 localhost localhost.localdomain localhost6 localhost6.localdomain6",
                 "198.144.191.54 buffalo1 buffalo1.federated.io"]
     }
   },
   "run_list": [
-    "recipe[centos]",
-    "recipe[centos::hosts]",
-    "recipe[centos::iptables]",
     "recipe[yum]",
     "recipe[yum::remi]",
     "recipe[yum::epel]",
+    "recipe[centos]",
+    "recipe[centos::hosts]",
+    "recipe[centos::iptables]",
     "recipe[mongodb::10gen_repo]",
     "recipe[tmux::package]",
-    "recipe[nodejs::npm]",
+    "recipe[nodejs::install_from_binary]",
     "recipe[java::oracle]",
     "recipe[ntp]",
     "recipe[nginx]",

@@ -35,30 +35,6 @@ template "#{node['nginx']['dir']}/sites-available/default" do
   notifies :reload, 'service[nginx]'
 end
 
-template "#{node['nginx']['dir']}/sites-available/routengn-api" do
-  source "routengn-api-site.erb"
-  owner "root"
-  group "root"
-  mode 00644
-  notifies :reload, 'service[nginx]'
-end
-
-template "#{node['nginx']['dir']}/sites-available/routengn-gui" do
-  source "routengn-gui-site.erb"
-  owner "root"
-  group "root"
-  mode 00644
-  notifies :reload, 'service[nginx]'
-end
-
-#nginx_site 'default' do
-#  enable node['nginx']['default_site_enabled']
-#end
-
-nginx_site 'routengn-api' do
-  #enable node['nginx']['routengn_api_site_enabled']
-end
-
-nginx_site 'routengn-gui' do
-  #enable node['nginx']['routengn_gui_site_enabled']
+nginx_site 'default' do
+  enable node['nginx']['default_site_enabled']
 end
