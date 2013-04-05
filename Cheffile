@@ -7,7 +7,7 @@ cookbook 'runit'
 cookbook 'ohai', '1.1.8', :git => 'git://github.com/opscode-cookbooks/ohai.git'
 cookbook 'chef-client'
 cookbook 'ntp', '1.3.2', :git => 'git://github.com/opscode-cookbooks/ntp.git'
-cookbook 'yum', '2.2.0', :git => 'git://github.com/opscode-cookbooks/yum.git'
+cookbook 'yum', '2.2.1', :git => 'git://github.com/opscode-cookbooks/yum.git'
 =begin
 cookbook 'build-essential', '1.3.4', :git => 'git://github.com/opscode-cookbooks/build-essential.git'
 cookbook 'nodejs', '1.1.2', :git => 'git://github.com/mdxp/nodejs-cookbook.git'
