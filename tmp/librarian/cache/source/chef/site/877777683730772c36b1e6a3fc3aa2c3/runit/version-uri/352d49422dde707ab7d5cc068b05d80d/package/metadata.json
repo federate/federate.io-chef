@@ -1,0 +1,90 @@
+{
+    "recommendations": {
+    },
+    "attributes": {
+      "runit/service_dir": {
+        "default": "/etc/service",
+        "calculated": false,
+        "type": "string",
+        "choice": [
+
+        ],
+        "description": "Symlinks to services managed under runit",
+        "display_name": "Runit service directory",
+        "required": "optional",
+        "recipes": [
+
+        ]
+      },
+      "runit/sv_bin": {
+        "default": "/usr/bin/sv",
+        "calculated": false,
+        "type": "string",
+        "choice": [
+
+        ],
+        "description": "Location of the sv binary",
+        "display_name": "Runit sv bin",
+        "required": "optional",
+        "recipes": [
+
+        ]
+      },
+      "runit": {
+        "calculated": false,
+        "type": "hash",
+        "choice": [
+
+        ],
+        "description": "Hash of runit attributes",
+        "display_name": "Runit",
+        "required": "optional",
+        "recipes": [
+
+        ]
+      },
+      "runit/sv_dir": {
+        "default": "/etc/sv",
+        "calculated": false,
+        "type": "string",
+        "choice": [
+
+        ],
+        "description": "Location of services managed by runit",
+        "display_name": "Runit sv directory",
+        "required": "optional",
+        "recipes": [
+
+        ]
+      }
+    },
+    "platforms": {
+      "ubuntu": [
+
+      ],
+      "debian": [
+
+      ]
+    },
+    "maintainer": "Opscode, Inc.",
+    "long_description": "",
+    "suggestions": {
+    },
+    "dependencies": {
+    },
+    "recipes": {
+    },
+    "maintainer_email": "cookbooks@opscode.com",
+    "version": "0.11.0",
+    "conflicting": {
+    },
+    "name": "runit",
+    "providing": {
+    },
+    "license": "Apache 2.0",
+    "replacing": {
+    },
+    "groupings": {
+    },
+    "description": "Installs runit and provides runit_service definition"
+  }
