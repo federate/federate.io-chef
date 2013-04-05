@@ -1,0 +1,1 @@
+default['centos']['hosts']['names'] = []

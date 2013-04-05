@@ -1,1 +1,131 @@
-{"run_list":[]}
+{
+  "resolver": {
+    "nameservers": ["127.0.0.1", "8.8.8.8", "8.8.4.4"],
+    "search": "federated.io",
+    "options": {
+      "timeout": 2
+    }
+  },
+  "nginx": {
+    "worker_processes": 5,
+    "worker_rlimit_nofile": 8192,
+    "worker_connections": 8192,
+    "event": "epoll",
+    "sendfile": "on",
+    "tcp_nodelay": "off",
+    "multi_accept": true,
+    "gzip": "on",
+    "gzip_proxied": "any",
+    "gzip_http_version": "1.0",
+    "default_site_enabled": true,
+    "client_max_body_size": "50M",
+    "client_body_buffer_size": "128k"
+  },
+  "yum": {
+    "exclude": ["ruby"]
+  },
+  "ntp": {
+    "servers": ["pool.ntp.org"]
+  },
+  "rvm": {
+    "install_rubies": true,
+    "rubies": [
+      {"version": "jruby-1.7.3"},
+      {
+        "version": "ruby-1.9.3-p392",
+        "ruby_string": "ruby-1.9.3-p392",
+        "rubygems_version": "2.0.3"
+      },
+      {
+        "version": "ruby-1.9.3-p327",
+        "ruby_string": "ruby-1.9.3-p327-falcon",
+        "patch": "falcon",
+        "rubygems_version": "2.0.3"
+      },
+      {
+        "version": "ruby-2.0.0-p0",
+        "ruby_string": "ruby-2.0.0-p0",
+        "rubygems_version": "2.0.3"
+      }
+    ],
+      "global_gems": [
+        { "name": "bundler" },
+        { "name": "rake", "version": "0.9.2" },
+        { "name": "rubygems-bundler", "action": "remove" },
+        { "name": "god", "version": "0.13.2" }
+    ],
+    "gems": {
+      "ruby-1.9.3-p392": [
+        { "name": "god", "version": "0.13.2" }
+      ],
+      "ruby-1.9.3-p327-falcon": [
+        { "name": "god", "version": "0.13.2" }
+      ],
+      "ruby-2.0.0-p0": [
+        { "name": "god", "version": "0.13.2" }
+      ]
+    },
+    "rvmrc": {
+      "rvm_project_rvmrc": 1,
+      "rvm_gemset_create_on_use_flag": 1,
+      "rvm_trust_rvmrcs_flag": 1
+    },
+    "rvm_wrapper": {
+      "ruby_string": "ruby-2.0.0-p0",
+      "binary": "god",
+      "prefix": "bootup",
+      "action": "create"
+    },
+    "user_installs": [{
+      "user": "root",
+      "upgrade": "stable",
+      "default_ruby": "ruby-2.0.0-p0"
+    }],
+    "default_ruby": "ruby-2.0.0-p0",
+    "rvm_gem_options": "--no-rdoc --no-ri"
+  },
+  "java": {
+    "install_flavor": "oracle",
+    "jdk_version": "7",
+    "arch": "x64",
+    "jdk": {
+      "7": {
+        "x64": {
+          "url": "http://download.oracle.com/otn-pub/java/jdk/7u17-b02/jdk-7u17-linux-x64.tar.gz",
+          "app_home": "/usr/lib/jvm",
+          "bin_cmds": ["java", "javac"]
+        }
+      }
+    },
+    "oracle": {
+       "accept_oracle_download_terms": true
+     }
+  },
+  "centos": {
+    "hosts": {
+      "names": ["::1         localhost localhost.localdomain localhost6 localhost6.localdomain6",
+                "198.144.191.54 buffalo1 buffalo1.federated.io"]
+    }
+  },
+  "run_list": [
+    "recipe[centos]",
+    "recipe[centos::hosts]",
+    "recipe[yum]",
+    "recipe[yum::remi]",
+    "recipe[yum::epel]",
+    "recipe[mongodb::10gen_repo]",
+    "recipe[tmux::package]",
+    "recipe[nodejs::npm]",
+    "recipe[java::oracle]",
+    "recipe[ntp]",
+    "recipe[nginx]",
+    "recipe[build-essential]",
+    "recipe[git]",
+    "recipe[resolver]",
+    "recipe[vim]",
+    "recipe[redis::default]",
+    "recipe[rvm::system]",
+    "recipe[python]",
+    "recipe[zsh]"
+  ]
+}
