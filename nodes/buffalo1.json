@@ -107,6 +107,16 @@
                 "198.144.191.54 buffalo1 buffalo1.federated.io"]
     }
   },
+  "pdns": {
+    "server": {
+      "local_address": ["127.0.0.1"]
+    },
+    "recursor": {
+      "allow_from": ["0.0.0.0/8"],
+      "auth_zones": ["federate.io"],
+      "forward_zones_recurse": ["e164.arpa", "e164.org", "e164.info", "enum.org", "nrenum.net"]
+    }
+  },
   "run_list": [
     "recipe[yum]",
     "recipe[yum::remi]",
@@ -127,6 +137,7 @@
     "recipe[redis::default]",
     "recipe[rvm::system]",
     "recipe[python]",
-    "recipe[zsh]"
+    "recipe[zsh]",
+    "recipe[pdns]"
   ]
 }
