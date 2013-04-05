@@ -23,8 +23,8 @@ package "pdns-backend-sqlite3" do
   package_name value_for_platform(
     "arch" => { "default" => "pdns" },
     ["debian","ubuntu"] => { "default" => "pdns-backend-sqlite3" },
-    ["redhat","centos","fedora"] => { "default" => "pdns-backend-sqlite3" },
-    "default" => "pdns-backend-sqlite3"
+    ["redhat","centos","fedora"] => { "default" => "pdns-backend-sqlite" },
+    "default" => "pdns-backend-sqlite"
   )
 end
 

@@ -64,6 +64,6 @@ http {
   client_max_body_size <%= node['nginx']['client_max_body_size'] %>;
   <% end -%>
 
-  #include <%= node['nginx']['dir'] %>/conf.d/*.conf;
+  include <%= node['nginx']['dir'] %>/conf.d/*.conf;
   include <%= node['nginx']['dir'] %>/sites-enabled/*;
 }
