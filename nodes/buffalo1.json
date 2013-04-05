@@ -119,8 +119,7 @@
     "recursor": {
       "local_address": ["198.144.191.54"],
       "allow_from": ["0.0.0.0/0"],
-      "auth_zones": ["federate.io"],
-      "forward_zones": ["federate.io"],
+      "forward_zones": ["federate.io=127.0.0.1"],
       "forward_zones_recurse": ["e164.arpa=8.8.8.8", "e164.org=8.8.8.8", "e164.info=8.8.8.8", "enum.org=8.8.8.8", "nrenum.net=8.8.8.8"]
     }
   },
