@@ -2,7 +2,6 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apt (1.9.0)
-    build-essential (1.3.4)
     chef-client (2.2.2)
       cron (>= 0.0.0)
     cron (1.2.2)
@@ -18,6 +17,13 @@ GIT
     nodejs (1.1.2)
       apt (>= 0.0.0)
       build-essential (>= 0.0.0)
+
+GIT
+  remote: git://github.com/opscode-cookbooks/build-essential.git
+  ref: master
+  sha: c803d604c061b53895792c67457bc50e023d48c2
+  specs:
+    build-essential (1.3.4)
 
 GIT
   remote: git://github.com/opscode-cookbooks/ntp.git
