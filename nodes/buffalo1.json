@@ -110,6 +110,7 @@
   "run_list": [
     "recipe[centos]",
     "recipe[centos::hosts]",
+    "recipe[centos::iptables]",
     "recipe[yum]",
     "recipe[yum::remi]",
     "recipe[yum::epel]",
