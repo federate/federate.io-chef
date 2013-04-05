@@ -21,3 +21,4 @@ cookbook 'openssh', '1.1.4', :git => 'git://github.com/opscode-cookbooks/openssh
 cookbook 'htop', '0.1', :git => 'git://github.com/cookbooks/htop.git'
 cookbook 'redis', '1.0.4', :git => 'git://github.com/cookbooks/hw-redis.git'
 cookbook 'rvm', '0.9.1', :git => 'git://github.com/fnichol/chef-rvm.git'
+cookbook 'sqlite', '1.0.0', :git => 'git://github.com/opscode-cookbooks/sqlite.git'

@@ -113,6 +113,13 @@ GIT
       yum (>= 0.0.0)
 
 GIT
+  remote: git://github.com/opscode-cookbooks/sqlite.git
+  ref: master
+  sha: 2261eb0138b07627c8b6e121d8d46b58d422af4e
+  specs:
+    sqlite (1.0.0)
+
+GIT
   remote: git://github.com/opscode-cookbooks/tmux.git
   ref: master
   sha: a75fd534347e7331e8dbc3b708394064bf5865ba
@@ -155,6 +162,7 @@ DEPENDENCIES
   redis (= 1.0.4)
   runit (>= 0)
   rvm (= 0.9.1)
+  sqlite (= 1.0.0)
   tmux (= 1.2.2)
   vim (= 1.0.2)
   yum (= 2.2.1)
