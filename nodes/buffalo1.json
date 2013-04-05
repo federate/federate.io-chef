@@ -108,7 +108,7 @@
   "centos": {
     "hosts": {
       "names": ["::1 localhost localhost.localdomain localhost6 localhost6.localdomain6",
-                "198.144.191.54 buffalo1 buffalo1.federated.io"]
+                "198.144.191.54 buffalo1 buffalo1.federate.io"]
     }
   },
   "pdns": {
@@ -117,10 +117,11 @@
       "sqlite_file": "/var/lib/pdns/pdns.sqlite3"
     },
     "recursor": {
+      "local_address": ["198.144.191.54"],
       "allow_from": ["0.0.0.0/0"],
       "auth_zones": ["federate.io"],
       "forward_zones": ["federate.io"],
-      "forward_zones_recurse": ["e164.arpa", "e164.org", "e164.info", "enum.org", "nrenum.net"]
+      "forward_zones_recurse": ["e164.arpa=8.8.8.8", "e164.org=8.8.8.8", "e164.info=8.8.8.8", "enum.org=8.8.8.8", "nrenum.net=8.8.8.8"]
     }
   },
   "run_list": [
