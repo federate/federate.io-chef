@@ -113,10 +113,11 @@
   },
   "pdns": {
     "server": {
-      "local_address": ["127.0.0.1"]
+      "local_address": ["127.0.0.1"],
+      "sqlite_file": "/var/lib/pdns/pdns.sqlite3"
     },
     "recursor": {
-      "allow_from": ["0.0.0.0/8"],
+      "allow_from": ["0.0.0.0/0"],
       "auth_zones": ["federate.io"],
       "forward_zones": ["federate.io"],
       "forward_zones_recurse": ["e164.arpa", "e164.org", "e164.info", "enum.org", "nrenum.net"]
@@ -128,7 +129,6 @@
     "recipe[yum::epel]",
     "recipe[centos]",
     "recipe[centos::hosts]",
-    "recipe[centos::iptables]",
     "recipe[mongodb::10gen_repo]",
     "recipe[tmux::package]",
     "recipe[nodejs::install_from_binary]",

@@ -34,6 +34,7 @@ cookbook_file "/var/tmp/pdns_schema.sql" do
   source "schema.sql"
 end
 
+=begin
 ruby_block "load pdns schema" do
   block do
     require 'sqlite3'
@@ -42,3 +43,4 @@ ruby_block "load pdns schema" do
     end
   end
 end
+=end

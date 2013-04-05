@@ -40,6 +40,13 @@ when "arch"
   end
 end
 
+directory "/etc/powerdns" do
+  owner "root"
+  group "root"
+  mode 00755
+  action :create
+end
+
 template "/etc/powerdns/pdns.conf" do
   source "pdns.conf.erb"
   owner "root"
