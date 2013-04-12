@@ -66,3 +66,35 @@ package 'libtool'
 package 'bison'
 package 'dstat'
 package 'ethtool'
+
+service 'cups' do
+  action :stop
+end
+
+service 'cups' do
+  action :disable
+end
+
+service 'ntpd' do
+  action :stop
+end
+
+service 'ntpd' do
+  action :disable
+end
+
+service 'ntpdate' do
+  action :restart
+end
+
+service 'ntpdate' do
+  action :enable
+end
+
+service 'httpd' do
+  action :stop
+end
+
+service 'httpd' do
+  action :disable
+end
