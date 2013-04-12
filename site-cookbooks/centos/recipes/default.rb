@@ -68,7 +68,7 @@ package 'dstat'
 package 'ethtool'
 
 file '/etc/ntp.conf' do
-  content "server 0.centos.pool.ntp.org\nserver 1.centos.pool.ntp.org\nserver 2.centos.pool.ntp.org"
+  content "server pool.ntp.org\n"
 end
 
 service 'cups' do
@@ -85,10 +85,6 @@ end
 
 service 'ntpd' do
   action :disable
-end
-
-service 'ntpdate' do
-  action :restart
 end
 
 service 'ntpdate' do
