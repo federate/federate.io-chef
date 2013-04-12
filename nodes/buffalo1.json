@@ -121,6 +121,18 @@
       "forward_zones_recurse": ["e164.arpa=8.8.8.8", "e164.org=8.8.8.8", "e164.info=8.8.8.8", "enum.org=8.8.8.8", "nrenum.net=8.8.8.8"]
     }
   },
+  "unicorn": {
+    "worker_timeout": 60,
+    "preload_app": true,
+    "worker_processes": 4,
+    "before_fork": "sleep 1",
+    "port": 8081,
+    "enable_stats": true,
+    "options": {
+      "tcp_nodelay": true,
+      "backlog": 100
+    }
+  },
   "run_list": [
     "recipe[yum]",
     "recipe[yum::remi]",
@@ -142,6 +154,7 @@
     "recipe[zsh]",
     "recipe[pdns::sqlite3]",
     "recipe[pdns::server]",
-    "recipe[pdns]"
+    "recipe[pdns]",
+    "recipe[unicorn]"
   ]
 }
