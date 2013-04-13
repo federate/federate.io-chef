@@ -25,7 +25,7 @@
 # overriding attributes by modifying a role, or the node itself.
 # default['nginx']['source']['checksum']
 default['nginx']['federate.io']['hostname'] = '_'
-default['nginx']['federate.io_site_enabled'] = true
+default['nginx']['federate.io_site_enabled'] = false
 default['nginx']['version'] = "1.2.6"
 default['nginx']['package_name'] = "nginx"
 default['nginx']['dir'] = "/etc/nginx"

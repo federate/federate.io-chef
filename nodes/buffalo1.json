@@ -20,7 +20,10 @@
     "default_site_enabled": false,
     "federate.io_site_enabled": true,
     "client_max_body_size": "50M",
-    "client_body_buffer_size": "128k"
+    "client_body_buffer_size": "128k",
+    "federate.io": {
+      "hostname": "_"
+    }
   },
   "yum": {
     "exclude": ["ruby"]
