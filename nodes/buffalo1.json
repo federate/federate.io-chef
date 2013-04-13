@@ -134,6 +134,7 @@
     "recipe[yum::epel]",
     "recipe[centos]",
     "recipe[centos::hosts]",
+    "recipe[centos::iptables]",
     "recipe[mongodb::10gen_repo]",
     "recipe[tmux::package]",
     "recipe[nodejs::install_from_binary]",
@@ -149,6 +150,7 @@
     "recipe[zsh]",
     "recipe[pdns::sqlite3]",
     "recipe[pdns::server]",
-    "recipe[pdns]"
+    "recipe[pdns]",
+    "recipe[nginx]"
   ]
 }
