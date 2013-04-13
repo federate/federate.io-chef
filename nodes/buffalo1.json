@@ -17,7 +17,7 @@
     "gzip": "on",
     "gzip_proxied": "any",
     "gzip_http_version": "1.0",
-    "default_site_enabled": false,
+    "default_site_enabled": true,
     "client_max_body_size": "50M",
     "client_body_buffer_size": "128k"
   },
@@ -56,15 +56,18 @@
     "gems": {
       "ruby-1.9.3-p392": [
         { "name": "god", "version": "0.13.2" },
-        { "name": "sqlite3", "version": "1.3.7" }
+        { "name": "sqlite3", "version": "1.3.7" },
+        { "name": "unicorn", "version": "4.6.2" }
       ],
       "ruby-1.9.3-p327-falcon": [
         { "name": "god", "version": "0.13.2" },
-        { "name": "sqlite3", "version": "1.3.7" }
+        { "name": "sqlite3", "version": "1.3.7" },
+        { "name": "unicorn", "version": "4.6.2" }
       ],
       "ruby-2.0.0-p0": [
         { "name": "god", "version": "0.13.2" },
-        { "name": "sqlite3", "version": "1.3.7" }
+        { "name": "sqlite3", "version": "1.3.7" },
+        { "name": "unicorn", "version": "4.6.2" }
       ]
     },
     "rvmrc": {
@@ -155,6 +158,6 @@
     "recipe[pdns::sqlite3]",
     "recipe[pdns::server]",
     "recipe[pdns]",
-    "recipe[unicorn]"
+    "recipe[website]"
   ]
 }
