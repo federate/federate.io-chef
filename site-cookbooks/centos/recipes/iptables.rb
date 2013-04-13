@@ -6,7 +6,7 @@ template "iptables" do
   owner "root"
   group "root"
   mode 00644
-  notifies :reload, 'service[iptables]'
+  notifies :restart, 'service[iptables]'
 end
 
 iptables_rules 'default_rules' do

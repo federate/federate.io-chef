@@ -26,6 +26,8 @@ package "pdns" do
   )
 end
 
+package "pdns-backend-pipe"
+
 service "pdns" do
   action [:enable, :start]
 end
@@ -40,14 +42,14 @@ when "arch"
   end
 end
 
-directory "/etc/powerdns" do
+directory node[:pdns][:recursor][:config_dir] do
   owner "root"
   group "root"
   mode 00755
   action :create
 end
 
-template "/etc/powerdns/pdns.conf" do
+template "#{node[:pdns][:server][:config_dir]}/pdns.conf" do
   source "pdns.conf.erb"
   owner "root"
   group "root"

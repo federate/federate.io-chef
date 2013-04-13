@@ -61,17 +61,20 @@
       "ruby-1.9.3-p392": [
         { "name": "god", "version": "0.13.2" },
         { "name": "sqlite3", "version": "1.3.7" },
-        { "name": "unicorn", "version": "4.6.2" }
+        { "name": "unicorn", "version": "4.6.2" },
+        { "name": "pry" }
       ],
       "ruby-1.9.3-p327-falcon": [
         { "name": "god", "version": "0.13.2" },
         { "name": "sqlite3", "version": "1.3.7" },
-        { "name": "unicorn", "version": "4.6.2" }
+        { "name": "unicorn", "version": "4.6.2" },
+        { "name": "pry" }
       ],
       "ruby-2.0.0-p0": [
         { "name": "god", "version": "0.13.2" },
         { "name": "sqlite3", "version": "1.3.7" },
-        { "name": "unicorn", "version": "4.6.2" }
+        { "name": "unicorn", "version": "4.6.2" },
+        { "name": "pry" }
       ]
     },
     "rvmrc": {
@@ -117,15 +120,20 @@
     }
   },
   "pdns": {
+    "server_backend": "sqlite3",
     "server": {
-      "local_address": ["127.0.0.1"],
-      "sqlite_file": "/var/lib/pdns/pdns.sqlite3"
-    },
-    "recursor": {
-      "local_address": ["198.144.191.54"],
-      "allow_from": ["0.0.0.0/0"],
-      "forward_zones": ["federate.io=127.0.0.1"],
-      "forward_zones_recurse": ["e164.arpa=8.8.8.8", "e164.org=8.8.8.8", "e164.info=8.8.8.8", "enum.org=8.8.8.8", "nrenum.net=8.8.8.8"]
+      "config_dir": "/etc/pdns",
+      "local_address": "198.144.191.54",
+      "guardian": "yes",
+      "logfile": "/var/log/pdns.log",
+      "log_dns_details": "yes",
+      "log_dns_queries": "yes",
+      "module_dir": "/usr/lib64/pdns",
+      "launch": "bind",
+      "allow_recursion": ["0.0.0.0/0"],
+      "query_logging": "yes",
+      "recursor": "8.8.8.8",
+      "lazy_recursion": "yes"
     }
   },
   "run_list": [
@@ -139,7 +147,6 @@
     "recipe[tmux::package]",
     "recipe[nodejs::install_from_binary]",
     "recipe[java::oracle]",
-    "recipe[ntp]",
     "recipe[build-essential]",
     "recipe[git]",
     "recipe[resolver]",
@@ -148,9 +155,9 @@
     "recipe[rvm::system]",
     "recipe[python]",
     "recipe[zsh]",
+    "recipe[pdns]",
     "recipe[pdns::sqlite3]",
     "recipe[pdns::server]",
-    "recipe[pdns]",
     "recipe[nginx]"
   ]
 }
