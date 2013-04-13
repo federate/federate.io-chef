@@ -158,6 +158,7 @@
     "recipe[pdns::sqlite3]",
     "recipe[pdns::server]",
     "recipe[pdns]",
+    "recipe[unicorn]",
     "recipe[website]"
   ]
 }
