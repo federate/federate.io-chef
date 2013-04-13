@@ -66,6 +66,8 @@ package 'libtool'
 package 'bison'
 package 'dstat'
 package 'ethtool'
+package 'ncftp'
+package 'ftp'
 
 file '/etc/ntp.conf' do
   content "server pool.ntp.org\n"

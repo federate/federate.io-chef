@@ -35,6 +35,18 @@ template "#{node['nginx']['dir']}/sites-available/default" do
   notifies :reload, 'service[nginx]'
 end
 
+template "#{node['nginx']['dir']}/sites-available/federate.io" do
+  source "federate.io-site.erb"
+  owner "root"
+  group "root"
+  mode 00644
+  notifies :reload, 'service[nginx]'
+end
+
 nginx_site 'default' do
   enable node['nginx']['default_site_enabled']
+end
+
+nginx_site 'federate.io' do
+  enable node['nginx']['federate.io_site_enabled']
 end

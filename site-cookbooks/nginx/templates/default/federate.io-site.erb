@@ -1,0 +1,53 @@
+server {
+  listen   80;
+  server_name  <%= node['nginx']['federate.io']['hostname'] %>;
+
+  access_log  <%= node['nginx']['log_dir'] %>/federate.io.access.log;
+
+  root   /var/www/federate.io;
+  index  index.html index.htm;
+
+  ### This disables automatic directory index creation, since no one will be
+  ### browsing your directories anyway
+  autoindex off;
+
+  ### Here we define the root location...
+  location / {
+  ### ...and then work some magic with "try_files", telling Nginx that for every
+  ### request that comes in to /, it should first try to serve the URI exactly
+  ### as it is, and if it doesn't find anything by that name to then try and
+  ### serve the URI as a directory, and if it doesn't find a directory by that
+  ### name to then spit out a 404 error and give up.
+      try_files $uri $uri/ =404;
+  }
+
+  ### This location definition prevents Nginx from serving any files which begin
+  ### with a dot, and further to not log any access attempts or 404s for files
+  ### which begin with dots, to keep your access and error logs clean.
+  location ~ /\. {
+      access_log off;
+      log_not_found off;
+      deny all;
+  }
+
+  ### This location definition prevents Nginx from serving any files which begin
+  ### with a dollar sign, so Nginx will refuse to serve out a temp file if you
+  ### are doing any editing inside a web-available directory
+  location ~ ~$ {
+      access_log off;
+      log_not_found off;
+      deny all;
+  }
+  ### These next two locations simply prevent Nginx from logging every time the
+  ### favicon & robots.txt files are accessed, to keep the logs clean
+  location = /robots.txt {
+      access_log off;
+      log_not_found off;
+  }
+
+  location = /favicon.ico {
+      access_log off;
+      log_not_found off;
+  }
+
+}
