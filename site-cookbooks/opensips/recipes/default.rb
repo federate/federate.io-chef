@@ -11,7 +11,6 @@ case node['opensips']['install_method']
 when 'source'
   include_recipe 'opensips::source'
 when 'package'
-  case node['platform']
   package node['opensips']['package_name']
   service 'opensips' do
     supports :status => true, :restart => true, :reload => true
