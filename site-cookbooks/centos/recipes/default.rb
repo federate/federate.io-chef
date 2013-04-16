@@ -68,6 +68,8 @@ package 'dstat'
 package 'ethtool'
 package 'ncftp'
 package 'ftp'
+package 'htop'
+package 'strace'
 
 file '/etc/ntp.conf' do
   content "server pool.ntp.org\n"

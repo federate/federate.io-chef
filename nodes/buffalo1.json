@@ -155,9 +155,7 @@
     "recipe[rvm::system]",
     "recipe[python]",
     "recipe[zsh]",
-    "recipe[pdns]",
-    "recipe[pdns::sqlite3]",
-    "recipe[pdns::server]",
+    "recipe[opensips]",
     "recipe[nginx]"
   ]
 }
