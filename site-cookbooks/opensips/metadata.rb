@@ -13,6 +13,6 @@ recipe "opensips::source", "Installs opensips from source and sets up configurat
   supports os
 end
 
-%w{ build-essential yum }.each do |cb|
+%w{ build-essential yum rtpproxy }.each do |cb|
   depends cb
 end
