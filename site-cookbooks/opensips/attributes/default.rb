@@ -2,8 +2,12 @@ default['opensips']['prefix'] = '/'
 default['opensips']['config_file'] = '/etc/opensips/opensips.cfg'
 default['opensips']['package_name'] = "opensips"
 default['opensips']['install_method'] = "package"
+
+
 default['opensips']['source']['url'] = "http://opensips.org/pub/opensips/latest/src/opensips-1.9.0_src.tar.gz"
 default['opensips']['source']['include_modules'] = ["signaling,", "sl,", "tm,", "rr,", "dialog,", "maxfwd,", "usrloc,", "registrar,", "textops,", "sipmsgops,", "mi_fifo,", "uri,", "auth,", "auth_db,", "nathelper,", "alias_db,", "group,", "rtpproxy,", "enum,", "avpops,", "pike,", "domain", "db_mysql"]
+
+
 default['opensips']['federate'] = {}
 default['opensips']['federate']['config'] = {}
 

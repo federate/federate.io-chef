@@ -71,6 +71,22 @@ Attributes
   </tr>
 </table>
 
+#### opensips::federate
+<table>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>node['opensips']['federate']['config']['debug_level']</tt></td>
+    <td>Integer</td>
+    <td>debug log level</td>
+    <td><tt>3</tt></td>
+  </tr>
+</table>
+
 Usage
 -----
 #### opensips::default
