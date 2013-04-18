@@ -8,6 +8,7 @@ version          '0.1.0'
 
 recipe "opensips", "Installs opensips package and sets up configuration"
 recipe "opensips::source", "Installs opensips from source and sets up configuration"
+recipe "opensips::rtpproxy", "Installs and enables rtpproxy"
 recipe "opensips::federate", "Installs the federate.io configuration"
 
 %w{ centos redhat amazon scientific oracle fedora }.each do |os|

@@ -139,10 +139,11 @@
   },
   "opensips": {
     "install_method": "source",
+    "prefix": "/usr/local/opensips",
+    "config_file": "/usr/local/opensips/etc/opensips/opensips.cfg",
     "source": {
       "url": "http://opensips.org/pub/opensips/latest/src/opensips-1.9.0_src.tar.gz",
-      "include_modules": ["signaling,", "sl,", "tm,", "rr,", "dialog,", "maxfwd,", "usrloc,", "registrar,", "textops,", "sipmsgops,", "mi_fifo,", "uri,", "auth,", "auth_db,", "nathelper,", "alias_db,", "group,", "rtpproxy,", "enum,", "avpops,", "pike,", "domain", "db_mysql"],
-      "prefix": "/usr/local/opensips"
+      "include_modules": ["signaling,", "sl,", "tm,", "rr,", "dialog,", "maxfwd,", "usrloc,", "registrar,", "textops,", "sipmsgops,", "mi_fifo,", "uri,", "auth,", "auth_db,", "nathelper,", "alias_db,", "group,", "rtpproxy,", "enum,", "avpops,", "pike,", "domain", "db_mysql"]
     }
   },
   "run_list": [
@@ -164,7 +165,9 @@
     "recipe[rvm::system]",
     "recipe[python]",
     "recipe[zsh]",
+    "recipe[opensips]",
     "recipe[opensips::federate]",
+    "recipe[opensips::rtpproxy]",
     "recipe[nginx]"
   ]
 }

@@ -11,9 +11,10 @@ user "opensips" do
   shell "/bin/false"
 end
 
-template node['opensips']['federate']['config_file'] do
+template node['opensips']['config_file'] do
   source "federate/opensips.cfg.erb"
   owner "root"
   group "root"
   mode 00600
+  action :create
 end
