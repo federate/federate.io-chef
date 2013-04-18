@@ -1,17 +1,13 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apt (1.9.0)
-    chef-client (2.2.2)
-      cron (>= 0.0.0)
+    apt (1.9.2)
     chef_gem (0.1.0)
     chef_handler (1.1.4)
     cron (1.2.2)
     dmg (1.1.0)
-    runit (1.1.2)
-      build-essential (>= 0.0.0)
-      yum (>= 0.0.0)
-    windows (1.8.4)
+    iptables (0.12.0)
+    windows (1.8.8)
       chef_handler (>= 0.0.0)
 
 GIT
@@ -32,9 +28,19 @@ GIT
       yum (>= 0.0.0)
 
 GIT
+  remote: git://github.com/federate/opensips.git
+  ref: master
+  sha: db5d780b7fab9e3d90a896f40469c2f602b68e23
+  specs:
+    opensips (0.1.1)
+      build-essential (>= 0.0.0)
+      ohai (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
   remote: git://github.com/fnichol/chef-rvm.git
   ref: master
-  sha: b77f8be6bacf6bc573d2384dca0b4dd88e9aa212
+  sha: 08a06bc7c3c9fd0fb6b3a9b80f27bd74e109660c
   specs:
     rvm (0.9.1)
       chef_gem (>= 0.0.0)
@@ -51,13 +57,21 @@ GIT
 GIT
   remote: git://github.com/opscode-cookbooks/build-essential.git
   ref: master
-  sha: c803d604c061b53895792c67457bc50e023d48c2
+  sha: 06ca4f0b51244a2993c70796564042f2dfa9231f
   specs:
     build-essential (1.3.4)
 
 GIT
-  remote: git://github.com/opscode-cookbooks/git.git
+  remote: git://github.com/opscode-cookbooks/chef-client.git
   ref: master
+  sha: fc64209728b8d21e92a13618a4d4367929ffd104
+  specs:
+    chef-client (2.2.3)
+      cron (>= 0.0.0)
+
+GIT
+  remote: git://github.com/opscode-cookbooks/git.git
+  ref: 2.3.0
   sha: 638db7f1bf60d36b27dacbe136eadd99111157a5
   specs:
     git (2.3.0)
@@ -70,15 +84,15 @@ GIT
 GIT
   remote: git://github.com/opscode-cookbooks/java.git
   ref: master
-  sha: c9fe9875b2e4f764847070972b5a2559b1d72cd3
+  sha: 131be5147c9ebfbef080553fab708ba94e674ad3
   specs:
     java (1.10.0)
       windows (>= 0.0.0)
 
 GIT
   remote: git://github.com/opscode-cookbooks/lvm.git
-  ref: master
-  sha: 578020b42f12fc37e8a3cebd0b59f272a907771f
+  ref: 0.8.6
+  sha: b4252dc1f2f4b998076fc2bdea3b08c6bad7a1b9
   specs:
     lvm (0.8.6)
 
@@ -99,9 +113,10 @@ GIT
 GIT
   remote: git://github.com/opscode-cookbooks/openssh.git
   ref: master
-  sha: 66fc774b37682b91bf49872af2d3ce91a35448bf
+  sha: d186e784da227146ed9996efdcbbadf0d6d97267
   specs:
     openssh (1.1.4)
+      iptables (>= 0.0.0)
 
 GIT
   remote: git://github.com/opscode-cookbooks/python.git
@@ -109,6 +124,15 @@ GIT
   sha: 4afbc5523b0787e08c63d41b2a1a05b0c554bf62
   specs:
     python (1.2.2)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
+  remote: git://github.com/opscode-cookbooks/runit.git
+  ref: master
+  sha: 870de1218fd005fd0008e74ff8376c7ca480c727
+  specs:
+    runit (1.1.2)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
 
@@ -149,7 +173,7 @@ GIT
 
 DEPENDENCIES
   build-essential (= 1.3.4)
-  chef-client (>= 0)
+  chef-client (= 2.2.3)
   git (= 2.3.0)
   htop (= 0.1)
   java (= 1.10.0)
@@ -157,10 +181,11 @@ DEPENDENCIES
   nodejs (= 1.1.2)
   ntp (= 1.3.2)
   ohai (= 1.1.8)
+  opensips (= 0.1.1)
   openssh (= 1.1.4)
   python (= 1.2.2)
   redis (= 1.0.4)
-  runit (>= 0)
+  runit (= 1.1.2)
   rvm (= 0.9.1)
   sqlite (= 1.0.0)
   tmux (= 1.2.2)

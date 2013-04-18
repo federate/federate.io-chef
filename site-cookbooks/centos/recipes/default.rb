@@ -102,3 +102,6 @@ end
 service 'httpd' do
   action :disable
 end
+
+puts "WTF!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+puts node.automatic_attrs['nginx'].inspect
