@@ -30,7 +30,7 @@ GIT
 GIT
   remote: git://github.com/federate/opensips.git
   ref: master
-  sha: db5d780b7fab9e3d90a896f40469c2f602b68e23
+  sha: 5c3e86da59b41414c3e5d80b3ac21a83c0856331
   specs:
     opensips (0.1.1)
       build-essential (>= 0.0.0)
