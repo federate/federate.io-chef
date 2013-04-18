@@ -30,34 +30,16 @@ Attributes
     <td><tt>package</tt></td>
   </tr>
   <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
     <td><tt>['opensips']['prefix']</tt></td>
     <td>String</td>
     <td>where to install to</td>
     <td><tt>/</tt></td>
   </tr>
   <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
     <td><tt>['opensips']['config_file']</tt></td>
     <td>String</td>
     <td>configuration</td>
     <td><tt>/etc/opensips/opensips.cfg</tt></td>
-  </tr>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
   </tr>
   <tr>
     <td><tt>['opensips']['package_name']</tt></td>
@@ -82,15 +64,9 @@ Attributes
     <td><tt>http://opensips.org/pub/opensips/latest/src/opensips-1.9.0_src.tar.gz</tt></td>
   </tr>
   <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
     <td><tt>['opensips']['source']['include_modules']</tt></td>
     <td>Array</td>
-    <td>whice modules to include in complitation</td>
+    <td>which modules to include in complitation</td>
     <td><tt>["signaling,", "sl,", "tm,", "rr,", "dialog,", "maxfwd,", "usrloc,", "registrar,", "textops,", "sipmsgops,", "mi_fifo,", "uri,", "auth,", "auth_db,", "nathelper,", "alias_db,", "group,", "rtpproxy,", "enum,", "avpops,", "pike,", "domain", "db_mysql"]</tt></td>
   </tr>
 </table>
