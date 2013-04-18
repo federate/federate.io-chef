@@ -85,6 +85,30 @@ Attributes
     <td>debug log level</td>
     <td><tt>3</tt></td>
   </tr>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>node['opensips']['federate']['config']['user']</tt></td>
+    <td>String</td>
+    <td>user to run opensips as</td>
+    <td><tt>opensips</tt></td>
+  </tr>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>node['opensips']['federate']['config']['group']</tt></td>
+    <td>String</td>
+    <td>group to run opensips as</td>
+    <td><tt>opensips</tt></td>
+  </tr>
 </table>
 
 Usage

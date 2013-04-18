@@ -1,12 +1,15 @@
-group "opensips" do
-  group_name "opensips"
+opensips_user = node['opensips']['federate']['config']['user']
+opensips_group = node['opensips']['federate']['config']['group']
+
+group opensips_group do
+  group_name opensips_group
   action :create
 end
 
-user "opensips" do
-  comment "opensips"
-  username "opensips"
-  gid "opensips"
+user opensips_user do
+  comment "opensips user"
+  username opensips_user
+  gid opensips_group
   system true
   shell "/bin/false"
 end
