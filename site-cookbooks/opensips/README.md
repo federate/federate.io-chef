@@ -9,6 +9,8 @@ Requirements
 
 #### packages
 - `ntpproxy` - opensips needs ntpproxy
+- `mysql-libs` - opensips needs mysql-libs
+- `mysql-devel` - opensips needs mysql-devel
 
 Attributes
 ----------
@@ -27,6 +29,42 @@ Attributes
     <td>where to install from</td>
     <td><tt>package</tt></td>
   </tr>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['opensips']['prefix']</tt></td>
+    <td>String</td>
+    <td>where to install to</td>
+    <td><tt>/</tt></td>
+  </tr>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['opensips']['config_file']</tt></td>
+    <td>String</td>
+    <td>configuration</td>
+    <td><tt>/etc/opensips/opensips.cfg</tt></td>
+  </tr>
+  <tr>
+    <th>Key</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td><tt>['opensips']['package_name']</tt></td>
+    <td>String</td>
+    <td>System package name</td>
+    <td><tt>opensips</tt></td>
+  </tr>
 </table>
 
 Usage
@@ -40,6 +78,35 @@ Just include `opensips` in your node's `run_list`:
   "name":"my_node",
   "run_list": [
     "recipe[opensips]"
+  ]
+}
+```
+
+#### opensips::rtpproxy
+
+Just include `opensips::rtpproxy` in your node's `run_list`:
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[opensips]",
+    "recipe[opensips::rtpproxy]"
+  ]
+}
+```
+
+#### opensips::federate
+
+Just include `opensips::federate` in your node's `run_list`:
+
+```json
+{
+  "name":"my_node",
+  "run_list": [
+    "recipe[opensips]",
+    "recipe[opensips::rtpproxy]",
+    "recipe[opensips::federate]"
   ]
 }
 ```
