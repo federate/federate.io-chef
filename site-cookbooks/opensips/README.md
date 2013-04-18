@@ -1,4 +1,4 @@
-opensips Cookbook
+OpenSIPS Cookbook
 =================
 
 Requirements
