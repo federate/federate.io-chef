@@ -1,9 +1,11 @@
+group "opensips" do
+  action :create
+end
+
 user "opensips" do
   comment "opensips"
-  gid "opensips"
   system true
   shell "/bin/false"
-  action :create
 end
 
 template node['opensips']['federate']['config_file'] do
@@ -11,5 +13,4 @@ template node['opensips']['federate']['config_file'] do
   owner "root"
   group "root"
   mode 00600
-  notifies :reload, 'service[opensips]'
 end

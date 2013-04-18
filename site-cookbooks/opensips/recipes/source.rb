@@ -27,6 +27,10 @@ make include_modules="#{node['opensips']['source']['include_modules'].join(' ')}
 EOH
 end
 
+group "opensips" do
+  action :create
+end
+
 user "opensips" do
   comment "opensips"
   system true
