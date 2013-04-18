@@ -140,7 +140,9 @@
   "opensips": {
     "install_method": "source",
     "source": {
-      "url": "http://opensips.org/pub/opensips/latest/src/opensips-1.9.0_src.tar.gz"
+      "url": "http://opensips.org/pub/opensips/latest/src/opensips-1.9.0_src.tar.gz",
+      "include_modules": ["signaling,", "sl,", "tm,", "rr,", "dialog,", "maxfwd,", "usrloc,", "registrar,", "textops,", "sipmsgops,", "mi_fifo,", "uri,", "auth,", "auth_db,", "nathelper,", "alias_db,", "group,", "rtpproxy,", "enum,", "avpops,", "pike,", "domain", "db_mysql"],
+      "prefix": "/usr/local/opensips"
     }
   },
   "run_list": [
@@ -162,7 +164,7 @@
     "recipe[rvm::system]",
     "recipe[python]",
     "recipe[zsh]",
-    "recipe[opensips]",
+    "recipe[opensips::federate]",
     "recipe[nginx]"
   ]
 }

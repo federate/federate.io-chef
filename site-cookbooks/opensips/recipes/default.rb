@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+package 'rtpproxy'
+
 case node['opensips']['install_method']
 when 'source'
   include_recipe 'opensips::source'
@@ -16,9 +18,8 @@ when 'package'
     supports :status => true, :restart => true, :reload => true
     action :enable
   end
-end
-
-service 'opensips' do
-  supports :status => true, :restart => true, :reload => true
-  action :start
+  service 'opensips' do
+    supports :status => true, :restart => true, :reload => true
+    action :start
+  end
 end

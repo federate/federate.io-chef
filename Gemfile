@@ -6,3 +6,4 @@ gem 'ffi', '~> 1.2.0'
 gem 'vagrant', "~> 1.0.5"
 gem 'multi_json', '~> 1.6.1'
 gem 'knife-github-cookbooks', '~> 0.1.8'
+gem 'active_support', '>= 3.0.0', :require => ['active_support/all']

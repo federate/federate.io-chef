@@ -8,11 +8,12 @@ version          '0.1.0'
 
 recipe "opensips", "Installs opensips package and sets up configuration"
 recipe "opensips::source", "Installs opensips from source and sets up configuration"
+recipe "opensips::federate", "Installs the federate.io configuration"
 
 %w{ centos redhat amazon scientific oracle fedora }.each do |os|
   supports os
 end
 
-%w{ build-essential yum rtpproxy }.each do |cb|
+%w{ build-essential yum }.each do |cb|
   depends cb
 end
