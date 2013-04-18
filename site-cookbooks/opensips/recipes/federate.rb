@@ -18,3 +18,13 @@ template node['opensips']['config_file'] do
   mode 00600
   action :create
 end
+
+service 'opensips' do
+  supports :status => true, :restart => true, :reload => true
+  action :enable
+end
+
+service 'opensips' do
+  supports :status => true, :restart => true, :reload => true
+  action :start
+end

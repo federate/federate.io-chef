@@ -165,9 +165,8 @@
     "recipe[rvm::system]",
     "recipe[python]",
     "recipe[zsh]",
-    "recipe[opensips]",
-    "recipe[opensips::federate]",
     "recipe[opensips::rtpproxy]",
+    "recipe[opensips::federate]",
     "recipe[nginx]"
   ]
 }

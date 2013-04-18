@@ -13,12 +13,14 @@ when 'source'
 when 'package'
   include_recipe 'opensips::rtpproxy'
   package node['opensips']['package_name']
-  service 'opensips' do
-    supports :status => true, :restart => true, :reload => true
-    action :enable
-  end
-  service 'opensips' do
-    supports :status => true, :restart => true, :reload => true
-    action :start
-  end
+end
+
+service 'opensips' do
+  supports :status => true, :restart => true, :reload => true
+  action :enable
+end
+
+service 'opensips' do
+  supports :status => true, :restart => true, :reload => true
+  action :start
 end
