@@ -33,6 +33,8 @@ end
 
 user "opensips" do
   comment "opensips"
+  gid "opensips"
+  username "opensips"
   system true
   shell "/bin/false"
 end

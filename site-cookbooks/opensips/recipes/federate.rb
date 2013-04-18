@@ -1,9 +1,12 @@
 group "opensips" do
+  group_name "opensips"
   action :create
 end
 
 user "opensips" do
   comment "opensips"
+  username "opensips"
+  gid "opensips"
   system true
   shell "/bin/false"
 end
