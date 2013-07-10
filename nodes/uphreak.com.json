@@ -17,35 +17,31 @@
     "client_body_buffer_size": "128k"
   },
   "java": {
-    "install_flavor": "oracle",
+    "install_flavor": "openjdk",
     "jdk_version": "7",
     "arch": "x64",
     "jdk": {
       "7": {
         "x64": {
-          "url": "http://download.oracle.com/otn-pub/java/jdk/7u25-b15/jdk-7u25-linux-x64.tar.gz",
           "app_home": "/usr/lib/jvm",
-          "bin_cmds": ["java", "javac"]
+          "bin_cmds": ["java", "javac"],
         }
       }
     },
-    "oracle": {
-       "accept_oracle_download_terms": true
-     }
   },
   "run_list":[
               "recipe[yum]",
               "recipe[yum::remi]",
               "recipe[yum::epel]",
-              "recipe[vim]",
-              "recipe[redis::default]",
-              "recipe[java::oracle]",
               "recipe[build-essential]",
+              "recipe[vim]",
               "recipe[git]",
-              "recipe[tmux::package]",
-              "recipe[nodejs::install_from_binary]",
               "recipe[python]",
               "recipe[zsh]",
+              "recipe[tmux::package]",
+              "recipe[nodejs::install_from_binary]",
+              "recipe[redis::default]",
+              "recipe[java::openjdk]",
               "recipe[nginx]"
               ]
 }
