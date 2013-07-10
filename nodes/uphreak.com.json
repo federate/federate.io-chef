@@ -1,0 +1,51 @@
+{
+  "name": "uphreak",
+  "nginx": {
+    "worker_processes": 1,
+    "worker_rlimit_nofile": 8192,
+    "worker_connections": 8192,
+    "event": "epoll",
+    "sendfile": "on",
+    "tcp_nodelay": "off",
+    "multi_accept": true,
+    "gzip": "on",
+    "gzip_proxied": "any",
+    "gzip_http_version": "1.0",
+    "default_site_enabled": false,
+    "federate.io_site_enabled": false,
+    "client_max_body_size": "50M",
+    "client_body_buffer_size": "128k"
+  },
+  "java": {
+    "install_flavor": "oracle",
+    "jdk_version": "7",
+    "arch": "x64",
+    "jdk": {
+      "7": {
+        "x64": {
+          "url": "http://download.oracle.com/otn-pub/java/jdk/7u25-b15/jdk-7u25-linux-x64.tar.gz",
+          "app_home": "/usr/lib/jvm",
+          "bin_cmds": ["java", "javac"]
+        }
+      }
+    },
+    "oracle": {
+       "accept_oracle_download_terms": true
+     }
+  },
+  "run_list":[
+              "recipe[yum]",
+              "recipe[yum::remi]",
+              "recipe[yum::epel]",
+              "recipe[vim]",
+              "recipe[redis::default]",
+              "recipe[java::oracle]",
+              "recipe[build-essential]",
+              "recipe[git]",
+              "recipe[tmux::package]",
+              "recipe[nodejs::install_from_binary]",
+              "recipe[python]",
+              "recipe[zsh]",
+              "recipe[nginx]"
+              ]
+}
