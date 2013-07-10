@@ -1,5 +1,5 @@
 upstream default_site {
-  server "127.0.0.1:80 fail_timeout=0 weight=5";
+  server 127.0.0.1:80 fail_timeout=0 weight=5;
 }
 
 server {
@@ -44,7 +44,7 @@ server {
       # per-response basis.
       # proxy_buffering off;
 
-    proxy_pass http://routengn_gui$request_uri;
+    proxy_pass http://default_site$request_uri;
    }
 
   try_files $request_uri/index.html $request_uri.html $request_uri @app;
