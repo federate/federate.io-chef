@@ -44,7 +44,7 @@ template "#{node['nginx']['dir']}/sites-available/federate.io" do
 end
 
 nginx_site 'default' do
-  #enable node['nginx']['default_site_enabled']
+  enable node['nginx']['default_site_enabled']
 end
 
 nginx_site 'federate.io' do

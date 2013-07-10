@@ -109,13 +109,9 @@ attribute "nginx/default_site_enabled",
   :display_name => "Default site enabled",
   :default => "true"
 
-attribute "nginx/routengn_api_site_enabled",
-  :display_name => "RouteNGN API site enabled",
-  :default => "true"
-
-attribute "nginx/routengn_gui_site_enabled",
-  :display_name => "RouteNGN GUI site enabled",
-  :default => "true"
+attribute "nginx/federate.io_site_enabled",
+  :display_name => "Federate.IO site enabled",
+  :default => "false"
 
 attribute "nginx/sendfile",
   :display_name => "Nginx sendfile",
